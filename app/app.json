@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Reach",
+    "slug": "reach",
+    "version": "1.0.0",
+    "scheme": "reach",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "icon": "./assets/icon.png",
+    "backgroundColor": "#0B0C10",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "dev.reach.app"
+    },
+    "android": {
+      "package": "dev.reach.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#4F7CFF"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-font",
+      "expo-asset",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Reach scans the pairing QR code shown by your PC."
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Reach asks for Face ID before it connects to your PC."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": { "usesCleartextTraffic": true }
+        }
+      ]
+    ]
+  }
+}

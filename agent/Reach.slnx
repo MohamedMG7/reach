@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Reach.Agent.Tests/Reach.Agent.Tests.csproj" />
+  <Project Path="Reach.Agent/Reach.Agent.csproj" />
+  <Project Path="Reach.Protocol.Tests/Reach.Protocol.Tests.csproj" />
+  <Project Path="Reach.Protocol/Reach.Protocol.csproj" />
+</Solution>

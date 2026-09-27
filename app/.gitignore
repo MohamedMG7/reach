@@ -1,0 +1,11 @@
+node_modules/
+.expo/
+dist/
+expo-env.d.ts
+*.tsbuildinfo
+.metro-health-check*
+# Native projects are generated (Continuous Native Generation)
+/ios
+/android
+# Built from assets/terminal.html on npm install
+src/terminal/terminalPage.generated.ts

@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- GetCursorPos and the virtual-screen metrics must both be in physical pixels. -->
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <Version>1.0.0</Version>
+    <!-- The Reach mark, as in the app's icon: shown for the .exe and on the taskbar. -->
+    <ApplicationIcon>reach.ico</ApplicationIcon>
+    <!-- What Windows shows for the .exe (Explorer's Details, Task Manager, the firewall prompt). -->
+    <AssemblyName>Reach</AssemblyName>
+    <RootNamespace>Reach.Agent</RootNamespace>
+    <Product>Reach</Product>
+    <AssemblyTitle>Reach</AssemblyTitle>
+    <Description>Control this PC from your phone. Free, private, local.</Description>
+    <Copyright>Copyright 2026 Mohamed Abdulghany</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="QRCoder" Version="1.8.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Reach.Protocol\Reach.Protocol.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Reach.Agent.Tests" />
+    <!-- System.Windows.Forms.Message clashes with Reach.Protocol.Message; tray files import WinForms explicitly. -->
+    <Using Remove="System.Windows.Forms" />
+  </ItemGroup>
+
+</Project>
